@@ -14,8 +14,8 @@ namespace EmployeeManagement.Core.Domain.Entities
         public string LastName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;   
-        public DateOnly? DateOfBirth { get; set; }
-        public DateOnly HireDate { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        public DateTime HireDate { get; set; }
         public string? Address { get; set; } = string.Empty;
         public string TIN { get; set; } = string.Empty;
 
