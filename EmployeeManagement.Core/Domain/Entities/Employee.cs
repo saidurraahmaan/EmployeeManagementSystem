@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,17 +10,16 @@ namespace EmployeeManagement.Core.Domain.Entities
 {
     public class Employee
     {
-        public int RecId { get; set; }
+        public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        public string Phone { get; set; } = string.Empty;   
+        public string Phone { get; set; } = string.Empty;
         public DateTime? DateOfBirth { get; set; }
         public DateTime HireDate { get; set; }
         public string? Address { get; set; } = string.Empty;
         public string TIN { get; set; } = string.Empty;
 
-        [ForeignKey("EmployeeAttendance_Id")]
-        public virtual List<AttendanceHistory>  attendanceHistories { get; set; } = new List<AttendanceHistory>();
+        public virtual List<AttendanceHistory> AttendanceHistories { get; set; } = new List<AttendanceHistory>();
     }
 }

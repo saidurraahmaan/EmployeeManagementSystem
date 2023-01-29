@@ -1,7 +1,14 @@
+using EmployeeManagement.Infrastructure.DBContext;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<EmployeeDbContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeContextConnection"));
+});
 
 var app = builder.Build();
 

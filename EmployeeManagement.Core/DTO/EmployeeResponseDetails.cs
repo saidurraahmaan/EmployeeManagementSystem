@@ -21,29 +21,7 @@ namespace EmployeeManagement.Core.DTO
         public DateTime HireDate { get; set; }
         public string? Address { get; set; } = string.Empty;
         public string TIN { get; set; } = string.Empty;
-        public  List<AttendanceHistory> attendanceHistories { get; set; } = new List<AttendanceHistory>();
-    
-        
-    }
+        public List<AttendanceHistory>? AttendanceHistories { get; set; } = new List<AttendanceHistory>();
 
-    public static class EmployeeExtention
-    {
-        public static EmployeeResponseDetails ToEmployeeResponseDetail(this Employee employee)
-        {
-            return new EmployeeResponseDetails()
-            {
-                Id = employee.RecId,
-                FirstName = employee.FirstName,
-                LastName = employee.LastName,
-                FullName = employee.FirstName + " " + employee.LastName,
-                Email = employee.Email,
-                Phone = employee.Phone,
-                Address = employee.Address,
-                TIN = employee.TIN,
-                HireDate = employee.HireDate,
-                Age = (DateTime.Today.Year  - Convert.ToDateTime(employee.DateOfBirth).Year),
-                attendanceHistories = employee.attendanceHistories,
-            };
-        }
     }
 }

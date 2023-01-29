@@ -10,6 +10,7 @@ namespace EmployeeManagement.Core.Domain.RepositoryInterfaces
     public interface IEmployeeRepository
     {
         Task<Employee> AddEmployee(Employee employee);
-        Task<Employee> GetEmployeeById(int Id);
+        Task<Employee> GetEmployeeById(int id);
+        Task<Employee> GetEmployeeWithAttendanceHistoryById(int id);
     }
 }
