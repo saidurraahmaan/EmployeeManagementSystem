@@ -18,9 +18,9 @@ namespace EmployeeManagement.Core.Services
             _attendanceHistoryRepository = attendanceHistoryRepository;
         }
 
-        public Task<AttendanceResponse> AddAttendance(AttendanceAddRequest attendance)
+        public Task<AttendanceResponse> AddAttendance(AttendanceAddRequest employee)
         {
-            return _attendanceHistoryRepository.AddAttendance(attendance);
+            throw new NotImplementedException();
         }
     }
 }
