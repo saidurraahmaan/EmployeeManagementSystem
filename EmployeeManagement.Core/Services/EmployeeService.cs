@@ -26,8 +26,10 @@ namespace EmployeeManagement.Core.Services
             return res.ToEmployeeResponseDetail();
         }
 
-        public Task<AttendanceResponse> GetEmployeeAttendanceById(int employeeId)
+        public async Task<AttendanceResponse> GetEmployeeAttendanceById(int employeeId)
         {
+            var attendances = await _employeeRepository.GetEmployeeWithAttendanceHistoryById(employeeId);
+            //return attendances;
             throw new NotImplementedException();
         }
 
