@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.Core.Domain.RepositoryInterfaces;
+﻿using EmployeeManagement.Core.Domain.Entities;
+using EmployeeManagement.Core.Domain.RepositoryInterfaces;
 using EmployeeManagement.Core.DTO;
 using EmployeeManagement.Core.Helpers;
 using EmployeeManagement.Core.ServiceInterfaces;
@@ -30,9 +31,10 @@ namespace EmployeeManagement.Core.Services
             throw new NotImplementedException();
         }
 
-        public Task<EmployeeResponseDetails> GetEmployeeById(int employeeId)
+        public async Task<EmployeeResponseDetails> GetEmployeeById(int employeeId)
         {
-            throw new NotImplementedException();
+            var employee = await _employeeRepository.GetEmployeeById(employeeId);
+            return employee.ToEmployeeResponseDetail();
         }
     }
 }
