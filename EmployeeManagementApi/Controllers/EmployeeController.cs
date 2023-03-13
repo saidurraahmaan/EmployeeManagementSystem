@@ -22,7 +22,7 @@ namespace EmployeeManagementApi.Controllers
         public IActionResult AddEmployee()
         {
 
-            //return Json(new { EmployeeId = 1 });
+            return Json(new { EmployeeId = 1 });
         }
     }
 }
